@@ -169,10 +169,8 @@ const teachers = [
   },
 ];
 
-/* =========================================================
-   TEACHING PROCEDURE
-========================================================= */
-
+/*  TEACHING PROCEDURE */
+ 
 const teachingSteps = [
   {
     icon: FaUserPlus,
@@ -201,9 +199,7 @@ const teachingSteps = [
   },
 ];
 
-/* =========================================================
-   MISSION
-========================================================= */
+/*  MISSION */
 
 const missionCards = [
   {
@@ -244,9 +240,9 @@ const missionCards = [
   },
 ];
 
-/* =========================================================
+/* 
    VISION
-========================================================= */
+ */
 
 const visionCards = [
   {
@@ -267,9 +263,9 @@ const visionCards = [
   },
 ];
 
-/* =========================================================
+/* 
    TESTIMONIALS
-========================================================= */
+ */
 
 const testimonials = [
   {
@@ -292,9 +288,9 @@ const testimonials = [
   },
 ];
 
-/* =========================================================
+/* 
    REUSABLE HEADING ANIMATION
-========================================================= */
+ */
 
 function AnimatedHeading({ children, className = "" }) {
   return (
@@ -319,9 +315,9 @@ function AnimatedHeading({ children, className = "" }) {
   );
 }
 
-/* =========================================================
+/* 
    REUSABLE PARAGRAPH ANIMATION
-========================================================= */
+ */
 
 function AnimatedParagraph({ children, className = "" }) {
   return (
@@ -347,9 +343,10 @@ function AnimatedParagraph({ children, className = "" }) {
   );
 }
 
-/* =========================================================
+/* 
+
    TESTIMONIAL SLIDER
-========================================================= */
+ */
 
 function TestimonialSlider() {
   const [current, setCurrent] = useState(0);
@@ -590,9 +587,9 @@ export default function About() {
   return (
     <main className="overflow-hidden bg-[#fffdf9] text-gray-800">
 
-      {/* =====================================================
+      {/* 
           HERO
-      ===================================================== */}
+       */}
 
       <section className="px-4 pb-10 pt-10 md:px-8 md:pb-14 md:pt-12">
 
@@ -651,11 +648,11 @@ export default function About() {
             mt-10
             h-[400px]
             w-full
-            max-w-[1315px]
+            max-w-[1130px]
             overflow-hidden
             rounded-[25px]
             shadow-xl
-            md:h-[580px]
+            md:h-[490px]
           "
         >
 

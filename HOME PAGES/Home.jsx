@@ -878,9 +878,7 @@ const [reviewText, setReviewText] = useState("");
 
 </section>
 
-{/* =========================================================
-    3. OUR KEY FEATURES
-========================================================= */}
+{/* 3. OUR KEY FEATURES */}
 
 <section
   className="
@@ -2861,7 +2859,7 @@ const [reviewText, setReviewText] = useState("");
       <h2 className="mt-4 text-[42px] font-bold leading-tight text-[#24384d] md:text-[60px]">
         Why{" "}
         <span className="text-[#d7ad28]">
-          Choose Our Quran Courses
+          Choose Us
         </span>
       </h2>
 

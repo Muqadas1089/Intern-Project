@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../src/assets/logo.png";
 import profile from "../src/assets/profile.png";
 
@@ -51,6 +51,22 @@ const Navbar = () => {
   const [forgotEmail, setForgotEmail] = useState("");
   const [forgotEmailError, setForgotEmailError] = useState("");
   const [otpProcessing, setOtpProcessing] = useState(false);
+
+  /* =========================================================
+     BODY SCROLL LOCK
+  ========================================================= */
+
+  useEffect(() => {
+    if (Card) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [Card]);
 
   /* =========================================================
      OPEN LOGIN
@@ -248,6 +264,7 @@ const Navbar = () => {
             "
           >
             {/* HOME */}
+
             <Link
               to="/"
               className="
@@ -263,6 +280,7 @@ const Navbar = () => {
             </Link>
 
             {/* ABOUT */}
+
             <Link
               to="/about"
               className="
@@ -278,6 +296,7 @@ const Navbar = () => {
             </Link>
 
             {/* SERVICES */}
+
             <Link
               to="/services"
               className="
@@ -293,6 +312,7 @@ const Navbar = () => {
             </Link>
 
             {/* COURSES DROPDOWN */}
+
             <div className="relative group">
               <Link to="/">
                 <button
@@ -312,9 +332,9 @@ const Navbar = () => {
                   Courses
                 </button>
               </Link>
-              
 
               {/* FIRST DROPDOWN */}
+
               <div
                 className="
                   absolute
@@ -339,6 +359,7 @@ const Navbar = () => {
                 "
               >
                 {/* QURAN COURSES */}
+
                 <div className="relative group/quran">
                   <div
                     className="
@@ -362,6 +383,7 @@ const Navbar = () => {
                   </div>
 
                   {/* SECOND DROPDOWN */}
+
                   <div
                     className="
                       absolute
@@ -525,6 +547,7 @@ const Navbar = () => {
             </div>
 
             {/* FEE */}
+
             <Link
               to="/Fee"
               className="
@@ -540,6 +563,7 @@ const Navbar = () => {
             </Link>
 
             {/* TEACHER */}
+
             <Link
               to="/Teacher"
               className="
@@ -555,6 +579,7 @@ const Navbar = () => {
             </Link>
 
             {/* CONTACT */}
+
             <Link
               to="/contact"
               className="
@@ -642,6 +667,7 @@ const Navbar = () => {
               "
             >
               {/* HOME */}
+
               <Link
                 to="/"
                 onClick={() => setMenuOpen(false)}
@@ -660,6 +686,7 @@ const Navbar = () => {
               </Link>
 
               {/* ABOUT */}
+
               <Link
                 to="/about"
                 onClick={() => setMenuOpen(false)}
@@ -678,6 +705,7 @@ const Navbar = () => {
               </Link>
 
               {/* SERVICES */}
+
               <Link
                 to="/services"
                 onClick={() => setMenuOpen(false)}
@@ -696,6 +724,7 @@ const Navbar = () => {
               </Link>
 
               {/* MOBILE COURSES */}
+
               <div>
                 <button
                   onClick={() =>
@@ -867,6 +896,7 @@ const Navbar = () => {
               </div>
 
               {/* FEE */}
+
               <Link
                 to="/Fee"
                 onClick={() => setMenuOpen(false)}
@@ -885,6 +915,7 @@ const Navbar = () => {
               </Link>
 
               {/* TO BE TEACHER */}
+
               <Link
                 to="/Teacher"
                 onClick={() => setMenuOpen(false)}
@@ -903,6 +934,7 @@ const Navbar = () => {
               </Link>
 
               {/* CONTACT */}
+
               <Link
                 to="/contact"
                 onClick={() => setMenuOpen(false)}
@@ -921,6 +953,7 @@ const Navbar = () => {
               </Link>
 
               {/* SIGN IN INSIDE MOBILE LIST */}
+
               <button
                 onClick={openLogin}
                 className="
@@ -950,6 +983,9 @@ const Navbar = () => {
       {Card && (
         <section
           className="
+            fixed
+            inset-0
+            z-[9999]
             bg-[rgb(255,251,232)]
             min-h-screen
             w-full
@@ -958,7 +994,7 @@ const Navbar = () => {
             justify-center
             px-4
             py-8
-            overflow-y-auto
+            overflow-hidden
           "
         >
           {/* =================================================
@@ -1025,6 +1061,7 @@ const Navbar = () => {
               </p>
 
               {/* EMAIL */}
+
               <label className="text-xs font-bold">
                 Email Address
               </label>
@@ -1062,6 +1099,7 @@ const Navbar = () => {
               )}
 
               {/* PASSWORD */}
+
               <label className="text-xs font-bold mt-4 block">
                 Password
               </label>
@@ -1115,6 +1153,7 @@ const Navbar = () => {
               )}
 
               {/* LOGIN BUTTON */}
+
               <button
                 onClick={handleLogin}
                 disabled={processing}
@@ -1136,6 +1175,7 @@ const Navbar = () => {
               </button>
 
               {/* FORGOT */}
+
               <button
                 onClick={() => {
                   setShowForgot(true);
@@ -1155,6 +1195,7 @@ const Navbar = () => {
               </button>
 
               {/* SIGNUP */}
+
               <p className="text-center mt-5 text-xs">
                 Don't have an account?
 
@@ -1249,6 +1290,7 @@ const Navbar = () => {
               </p>
 
               {/* FULL NAME */}
+
               <label className="block text-xs font-bold text-[#26364B] mb-2">
                 Full Name
               </label>
@@ -1285,6 +1327,7 @@ const Navbar = () => {
               )}
 
               {/* SIGNUP EMAIL */}
+
               <label className="block text-xs font-bold text-[#26364B] mt-4 mb-2">
                 Email Address
               </label>
@@ -1321,6 +1364,7 @@ const Navbar = () => {
               )}
 
               {/* SIGNUP PASSWORD */}
+
               <label className="block text-xs font-bold text-[#26364B] mt-4 mb-2">
                 Password
               </label>
@@ -1376,6 +1420,7 @@ const Navbar = () => {
               )}
 
               {/* CONFIRM PASSWORD */}
+
               <label className="block text-xs font-bold text-[#26364B] mt-4 mb-2">
                 Confirm Password
               </label>
@@ -1431,6 +1476,7 @@ const Navbar = () => {
               )}
 
               {/* SIGNUP BUTTON */}
+
               <button
                 onClick={handleSignup}
                 disabled={signupProcessing}
@@ -1455,6 +1501,7 @@ const Navbar = () => {
               </button>
 
               {/* LOGIN LINK */}
+
               <p className="text-center text-xs text-[#4B5563] mt-5">
                 Already have an account?
 
@@ -1500,6 +1547,7 @@ const Navbar = () => {
               "
             >
               {/* CLOSE */}
+
               <button
                 onClick={() => setShowForgot(false)}
                 className="
@@ -1528,6 +1576,7 @@ const Navbar = () => {
               </h1>
 
               {/* EMAIL */}
+
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -1561,6 +1610,7 @@ const Navbar = () => {
               )}
 
               {/* SEND OTP */}
+
               <button
                 onClick={handleSendOTP}
                 disabled={otpProcessing}
@@ -1582,6 +1632,7 @@ const Navbar = () => {
               </button>
 
               {/* CANCEL */}
+
               <button
                 onClick={() => setShowForgot(false)}
                 className="
